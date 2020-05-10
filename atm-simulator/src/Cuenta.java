@@ -9,7 +9,6 @@ public abstract class Cuenta {
 	
 	public Cuenta (Cliente cliente) {
 		this.cuit = cliente.getCuit();
-			
 	}
 	
 	public void depositar(int monto) {
