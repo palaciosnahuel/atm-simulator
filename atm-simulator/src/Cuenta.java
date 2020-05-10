@@ -1,7 +1,7 @@
 
 public abstract class Cuenta {
 
-	private String : "nahuel puto";
+	//public String = "nahuel puto";
 	private String alias = null;
 	private int cuit;
 	private double saldoPesos = 0;
