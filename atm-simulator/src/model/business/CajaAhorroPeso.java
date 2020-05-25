@@ -1,8 +1,9 @@
-
-public class CajaAhorroDolar extends Cuenta{
+package model.business;
+public class CajaAhorroPeso extends Cuenta{
 
 	
-	public CajaAhorroDolar() {
+	
+	public CajaAhorroPeso() {
 		
 	}
 	

@@ -1,4 +1,4 @@
-
+package model.business;
 public class CuentaCorriente extends Cuenta{
 
 		private double descubierto;
