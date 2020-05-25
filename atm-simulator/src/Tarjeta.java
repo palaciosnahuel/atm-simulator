@@ -1,36 +1,37 @@
-import SimuladorATM.CajaDeAhorroDolar;
-import SimuladorATM.CajaDeAhorroPeso;
-import SimuladorATM.Cliente;
-import SimuladorATM.Cuenta;
 
 public class Tarjeta {
-	
-	private int clave= 1234;
-	private int numeroTarjeta;
-	private int cuit;
-	private Cuenta[]tiposDeCuentas;
-
-	
-	//Cuenta corriente + Caja de ahorro en Pesos;
-	public Tarjeta (Cliente cliente, Cuenta cuentacorriente , CajaDeAhorroPeso cajadeahorropeso) {
-				
-	}
-	//Cuenta corriente;
-	public Tarjeta (Cliente cliente, Cuenta cuentacorriente) {
-				
-	}
-	//Cuenta corriente + Caja de ahorro en Pesos + Caja de ahorro en Dolares; 
-	public Tarjeta (Cliente cliente, Cuenta cuentacorriente, CajaDeAhorroPeso cajaahorropeso, CajaDeAhorroDolar cajaahorrodolar) {
-				
-	}
-	//Cuenta corriente + Caja de ahorro en Dolares; 
-	public Tarjeta (Cliente cliente, CajaDeAhorroPeso cajaahorropeso, CajaDeAhorroDolar cajaahorrodolar) {
-				
-	}
-	
-	public void agregarCuenta () {
 		
+		private int id;
+		private int pinInicial;
+		private int pin;
+		
+	public Tarjeta() {
+		
+		id = (int)((Math.random()+1)*50005010);
+		pinInicial = 1234;
 	}
+	
+	public int getID() {
+		
+		return this.id;
+	}
+	
+	public int getPinInicial() {
+		
+		return pinInicial;
+	}
+	
+	public void setPin(int pin) {
+		
+		this.pin = pin;
+	}
+	
+	public int getPin() {
+		
+		return this.pin;
+	}
+}
+	
 
 	public int getClave() {
 		return clave;
@@ -38,11 +39,17 @@ public class Tarjeta {
 	public void setClave(int clave) {
 		this.clave = clave;
 	}
-	public int getNumeroTarjeta() {
-		return numeroTarjeta;
+	public void getNumeroTarjeta() {
+		
+		for(int i=0; i<this.numeroTarjeta.length; ++i) {
+		System.out.println(this.numeroTarjeta[i]);
+		}
 	}
-	public void setNumeroTarjeta(int numeroTarjeta) {
-		this.numeroTarjeta = numeroTarjeta;
+	public void setNumeroTarjeta() {
+		
+		for(int i=0; i<this.numeroTarjeta.length; ++i) {
+		this.numeroTarjeta[i] = (int)((Math.random()+1)*2);
+		}
 	}
 	public int getCuit() {
 		return cuit;
@@ -51,9 +58,9 @@ public class Tarjeta {
 		this.cuit = cuit;
 	}
 	public Cuenta[] getCuentas() {
-		return tiposDeCuentas;
+		return cuentas;
 	}
 	public void setCuentas(Cuenta[] cuentas) {
-		this.tiposDeCuentas = cuentas;
+		this.cuentas = cuentas;
 	}
 }

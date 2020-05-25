@@ -1,12 +1,17 @@
 
-public class CajaDeAhorroDolar extends CajaDeAhorro{
-	
-	public CajaDeAhorroDolar(Cliente cliente) {
-		super(cliente);
+public class CajaAhorroDolar extends Cuenta{
 
+	
+	public CajaAhorroDolar() {
+		
 	}
+	
 	@Override
 	public void depositar(int monto) {
-		this.setSaldoDolar(this.getSaldoDolar()+monto);
+		
+	}
+	@Override
+	public void extraer(int monto) {
+		
 	}
 }
