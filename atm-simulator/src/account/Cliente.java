@@ -10,110 +10,6 @@ public class Cliente {
 		private Tarjeta tarjeta;
 		private int TipoDeCuenta;
 		
-	public Cliente(int cuit, CuentaCorriente cuentaCorriente, String aliasCC, double descubierto, Tarjeta tarjeta) {
-		
-		cuentas = new LinkedList<Cuenta>();
-		
-		this.cuit = cuit;
-		this.tarjeta = tarjeta;
-		
-		cuentaCorriente.setDescubierto(descubierto);
-		cuentaCorriente.setAlias(aliasCC);
-		cuentas.add(cuentaCorriente);
-		
-		
-			
-	}
-	
-	public Cliente(int cuit, CajaAhorroDolar cuentaDolar, String aliasCAD, Tarjeta tarjeta) {
-		
-		cuentas = new LinkedList<Cuenta>();
-		
-		this.cuit = cuit;
-		this.tarjeta = tarjeta;
-		
-		cuentaDolar.setAlias(aliasCAD);
-		cuentas.add(cuentaDolar);
-		
-		
-	}
-	
-	public Cliente(int cuit, CajaAhorroPeso cuentaPeso, String aliasCAP, Tarjeta tarjeta) {
-		
-		cuentas = new LinkedList<Cuenta>();
-		
-		this.cuit = cuit;
-		this.tarjeta = tarjeta;
-		
-		cuentas.add(cuentaPeso);
-		cuentaPeso.setAlias(aliasCAP);
-		
-	}
-	
-	public Cliente(int cuit, CuentaCorriente cuentaCorriente, String aliasCC, double descubierto, CajaAhorroDolar cuentaDolar,String aliasCAD, CajaAhorroPeso cuentaPeso,String aliasCAP, Tarjeta tarjeta) {
-		
-		cuentas = new LinkedList<Cuenta>();
-		
-		this.cuit = cuit;
-		this.tarjeta = tarjeta;
-		
-		cuentas.add(cuentaCorriente);
-		cuentaCorriente.setAlias(aliasCC);
-		cuentaCorriente.setDescubierto(descubierto);
-		
-		cuentas.add(cuentaDolar);
-		cuentaDolar.setAlias(aliasCAD);
-		
-		cuentas.add(cuentaPeso);
-		cuentaPeso.setAlias(aliasCAP);
-		
-		
-	}
-	
-	public Cliente(int cuit, CuentaCorriente cuentaCorriente, String aliasCC, double descubierto, CajaAhorroDolar cuentaDolar, String aliasCAD, Tarjeta tarjeta) {
-		
-		cuentas = new LinkedList<Cuenta>();
-		
-		this.cuit = cuit;
-		this.tarjeta = tarjeta;
-		
-		cuentas.add(cuentaCorriente);
-		cuentaCorriente.setAlias(aliasCC);
-		cuentaCorriente.setDescubierto(descubierto);
-		
-		cuentas.add(cuentaDolar);
-		cuentaDolar.setAlias(aliasCAD);
-		
-	}
-	
-	public Cliente(int cuit, CajaAhorroPeso cuentaPeso, String aliasCAP, CajaAhorroDolar cuentaDolar, String aliasCAD, Tarjeta tarjeta) {
-		
-		cuentas = new LinkedList<Cuenta>();
-		
-		this.cuit = cuit;
-		this.tarjeta = tarjeta;
-		
-		cuentas.add(cuentaDolar);
-		cuentaDolar.setAlias(aliasCAD);
-		
-		cuentas.add(cuentaPeso);
-		cuentaPeso.setAlias(aliasCAP);
-	}
-	
-	public Cliente(int cuit, CajaAhorroPeso cuentaPeso, String aliasCAP, double descubierto, CuentaCorriente cuentaCorriente, String aliasCC, Tarjeta tarjeta) {
-		
-		cuentas = new LinkedList<Cuenta>();
-		
-		this.cuit = cuit;
-		this.tarjeta = tarjeta;
-		
-		cuentas.add(cuentaPeso);
-		cuentaPeso.setAlias(aliasCAP);
-		
-		cuentas.add(cuentaCorriente);
-		cuentaCorriente.setAlias(aliasCC);
-		cuentaCorriente.setDescubierto(descubierto);
-	}
 
 	
 	public Cliente(int cuit, int tipoDeCuenta, Tarjeta tarjeta, String alias, double descubierto) {
@@ -123,8 +19,6 @@ public class Cliente {
 			// Accede a cuenta corriente ( CC )
 		case 01 :
 			
-				
-
 				this.cuit = cuit;
 				this.tarjeta = tarjeta;
 				
@@ -137,24 +31,24 @@ public class Cliente {
 				
 		case 02 :
 
-			this.cuit = cuit;
+				this.cuit = cuit;
 			
-			CuentaCorriente cajaAhorroPeso = new CuentaCorriente();
-			cajaAhorroPeso.setAlias(alias);
-			tarjeta = new Tarjeta();
-			cuentas.add(cajaAhorroPeso);
+				CuentaCorriente cajaAhorroPeso = new CuentaCorriente();
+				cajaAhorroPeso.setAlias(alias);
+				tarjeta = new Tarjeta();
+				cuentas.add(cajaAhorroPeso);
 			
 			
 			// Accede a cajaAhorroDolar ( CAD )
 			
 		case 03 :
 
-			this.cuit = cuit;
+				this.cuit = cuit;
 			
-			CuentaCorriente cuentaAhorroDolar = new CuentaCorriente();
-			cuentaAhorroDolar.setAlias(alias);
-			tarjeta = new Tarjeta();
-			cuentas.add(cuentaAhorroDolar);
+				CuentaCorriente cuentaAhorroDolar = new CuentaCorriente();
+				cuentaAhorroDolar.setAlias(alias);
+				tarjeta = new Tarjeta();
+				cuentas.add(cuentaAhorroDolar);
 		}
 	}
 

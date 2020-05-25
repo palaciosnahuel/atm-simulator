@@ -1,4 +1,3 @@
-import account.Cuenta;
 
 public class CuentaCorriente extends Cuenta{
 
