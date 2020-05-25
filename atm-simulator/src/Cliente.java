@@ -1,5 +1,6 @@
 
 import java.util.LinkedList;
+import java.util.ListIterator;
 
 
 public class Cliente {
@@ -23,11 +24,11 @@ public Cliente(int cuit, int tipoDeCuenta, Tarjeta tarjeta, String alias, double
 			cuentaCorriente.setAlias(alias);
 			cuentaCorriente.setDescubierto(descubierto);
 			cuentas.add(cuentaCorriente);
-	
+			break;
 		// Accede a cajaAhorroPeso ( CAP )
 			
 	case 02 :
-
+		
 			this.cuit = cuit;
 			this.tarjeta = tarjeta;
 			
@@ -35,12 +36,12 @@ public Cliente(int cuit, int tipoDeCuenta, Tarjeta tarjeta, String alias, double
 			cajaAhorroPeso.setAlias(alias);
 			tarjeta = new Tarjeta();
 			cuentas.add(cajaAhorroPeso);
-		
+			break;
 		
 		// Accede a cajaAhorroDolar ( CAD )
 		
 	case 03 :
-
+		
 			this.cuit = cuit;
 			this.tarjeta = tarjeta;
 			
@@ -48,6 +49,7 @@ public Cliente(int cuit, int tipoDeCuenta, Tarjeta tarjeta, String alias, double
 			cajaAhorroDolar.setAlias(alias);
 			tarjeta = new Tarjeta();
 			cuentas.add(cajaAhorroDolar);
+			break;
 	}
 }
 
@@ -60,30 +62,32 @@ public void agregarCuenta(int tipoDeCuenta, String alias, double descubierto) {
 	switch (tipoDeCuenta) {
 		
 		case 01 :
-
+	
 			CuentaCorriente cuentaCorriente = new CuentaCorriente();
 			cuentaCorriente.setAlias(alias);
 			cuentaCorriente.setDescubierto(descubierto);
 			cuentas.add(cuentaCorriente);
-			
+			break;
 		case 02 :
-
+	
 			CajaAhorroPeso cajaAhorroPeso = new CajaAhorroPeso();
 			cajaAhorroPeso.setAlias(alias);
 			cuentas.add(cajaAhorroPeso);
-			
+			break;
 		case 03 :
-		
+	
 			CajaAhorroDolar cajaAhorroDolar = new CajaAhorroDolar();
 			cajaAhorroDolar.setAlias(alias);
 			cuentas.add(cajaAhorroDolar);
-	}
+			break;
+		}
+	
 }
 	public static void main(String[] args) {
 		
 		Cliente juan = new Cliente(36637814,01,new Tarjeta(),"ROSITA.SOLDIERS.UNTREF",1200);
-		juan.agregarCuenta(02, "CAJON.PEPE.MANDARINA", 0);
-		juan.agregarCuenta(03, "CEREZA.FLOR.AUTO", 0);
+				juan.agregarCuenta(02, "CAJON.PEPE.MANDARINA", 0);
+				juan.agregarCuenta(03, "CEREZA.FLOR.AUTO", 0);
 		
 		System.out.println(juan.cuentas.get(0).getAlias());
 		System.out.println(juan.tarjeta.getID());
@@ -91,5 +95,6 @@ public void agregarCuenta(int tipoDeCuenta, String alias, double descubierto) {
 		System.out.println(juan.tarjeta.getID());
 		System.out.println(juan.cuentas.get(2).getAlias());
 		System.out.println(juan.tarjeta.getID());
-	}
+		
+		}
 }
